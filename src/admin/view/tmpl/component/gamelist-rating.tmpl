@@ -1,0 +1,11 @@
+(:script :type "text/html" :id "gamelist-rating"
+    (:div :class "year-published-box" :data-bind "foreach: $root.ratingGamelist()"
+	  (:div :class "one-year clear"
+		(:div :class "one-year-header" 
+		      (:h4 :class "one-year-header-text" :data-bind "text: name"))
+		(:ul :data-bind "foreach: gamelist"
+		 (:li  
+		  (:div :class "one-game"
+			(:a :href "/boardgame/gamelist-year-published?guid="
+			    (:img :data-bind "attr: {'src' : $root.getSquareThumbnailLink(thumbnail) , 'class' : 'modal-image ' + $root.getRatingBorder(rating) }")))))))
+    (:div :class "gamelist_wrapper" nil))

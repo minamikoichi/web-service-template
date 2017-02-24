@@ -1,0 +1,31 @@
+/* menubar */
+@media screen and (max-width: 978px) {
+    .responsive-menubar {
+	display : block;
+	position: fixed;	
+    }
+    .menubar {
+	display : none;
+    }
+    .content {
+	margin-left: 0px;
+    }    
+
+    .header-menu-item:first-child {
+	margin-left : 30px;
+    }
+}
+
+/* archive */
+@media screen and (max-width: 743px) {
+    .archive-section:nth-child(n) {
+    }
+}
+
+@media screen and (min-width: 744px) and (max-width: 1252px) {
+    .archive-section:nth-child(2n) {
+    }
+
+    .archive-section:nth-child(2n+1) {
+    }
+}

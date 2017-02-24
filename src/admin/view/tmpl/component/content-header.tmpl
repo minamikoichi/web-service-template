@@ -1,0 +1,20 @@
+(:div :class "navbar" :style "margin-bottom: 0px;"
+      (:div :class "navbar-inner"
+	    (:div :class "container"
+		  (:a :class "btn btn-navbar" :data-toggle "collapse" :data-target ".nav-collapse"
+		      (:span :class "icon-bar" nil)
+		      (:span :class "icon-bar" nil)
+		      (:span :class "icon-bar" nil))
+		  (:div :class "nav-collapse"
+			(:ul :class "nav"
+			     (:li 
+			      (:a :href "/boardgame/" :data-bind "click: function(data, event) { $root.topLinkClick(data,event)}" "BLOG"))
+			     (:li 
+			      (:a :href "/boardgame/gamelist/" "GAMELIST"))
+			     (:li 
+			      (:a :href "/boardgame/about/" "ABOUT")))
+			(:ul :class "nav pull-right"
+			     (:li
+			      (:a :href "https://twitter.com/mnmbg"  (:img :class "content-header-icon" :src "/boardgame/img/glyphicons_twitter.png")))
+			     (:li 
+			      (:a :href "/boardgame/feed" (:img :class "content-header-icon" :src "/boardgame/img/glyphicons_rss.png"))))))))

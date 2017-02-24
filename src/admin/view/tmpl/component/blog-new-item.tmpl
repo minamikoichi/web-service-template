@@ -1,0 +1,59 @@
+(:script :type "text/html" :id "blog-new-item"
+	 (:div :id "preview-viewer"
+	      (:li :class :section
+		   (:header 
+		    (:h4 :class :item-date :data-bind "text: previewToday() ")
+		    (:h2 :class :item-title :data-bind "text: newItemTitle"))
+		   (:div :class :item-text :data-bind "html: previewHtml" nil)))
+	 (:form :method "post" :action "" :id "postform"
+		(:fieldset 
+		 (:div :class "control-group" :style "margin-bottom:0px"
+		       (:div :class "control" 
+			     (:input :class "input-xlarge" :type "text" :id "title" :name "title" :data-bind "value : newItemTitle" nil)))
+		 (:div :class "control-group"
+		       (:div :class "control"
+			     (:textarea :name "text" :id "text" :rows "25" :cols "60" :data-bind "value : newItemText" nil)))
+		 (:div :class "control-group" 
+		       (:label :class "control-label" :for "tags" "tags")
+		       (:div :class "control"
+			     (:input :class "input-xlarge" :type "text" :id "tags" :name "tags" :data-bind "value : newItemTags" nil)))
+		 (:div :class "form-actions" 
+		       (:button :class "btn btn-default" :id "preview" :data-bind "click: function(data,event) { previewItemClick(newItemText,data,event) }" "Preview")
+		       (:button :class "btn btn-default" :id "post"    :data-bind "click: function(data,event) { postItemClick(data,event)    }" "Post"))))
+	 (:table :class "table table-bordered table-striped mark-description"
+	   (:thead
+	    (:tr
+	     (:th "Mark")
+	     (:th "Usage")))
+	   (:tbody
+	    (:tr
+	     (:th "headline")
+	     (:th 
+	      " * -> h1" (:br)
+	      "** -> h2" (:br)
+	      "*** -> h3"))
+	    (:tr 
+	     (:th "list")
+	     (:th "+ xxx -> " (:code "<ol><li>xxx</li><li>yyy</li></ol>") (:br)
+	          "+ yyy"
+                  "- xxx -> " (:code "<ul><li>xxx</li><li>yyy</li></ul>") (:br)
+		  "- xxx"))
+	    (:tr 
+	     (:th "block")
+	     (:th 
+	      "#+BEGIN_SRC  -> <div class=XXX>" (:br)
+	      "(block)        (block)" (:br)
+	      "#+END_SRC       </>"))
+	    (:tr 
+	     (:th "img")
+	     (:th 
+	      "#+photo-viewer:url"
+	      "size320x240"))
+	    (:tr 
+	     (:th "link")
+	     (:th " [[link][discription]]" (:br)
+		  " [[image-link][discription]]"))
+	    (:tr 
+	     (:th "option")
+	     (:th "#+ATTR_HTML: attr=value" (:br)
+		  "[[link][discription]]")))))

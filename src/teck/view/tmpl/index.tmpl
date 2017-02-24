@@ -1,0 +1,32 @@
+(:html :lang "ja"
+   (:head
+       (:title :data-bind "text : '土曜Lisp' " nil)
+       (:meta :charset "utf-8")
+       (:meta :name "viewport" :content "width=device-width, initial-scale=1.0")
+       (:meta :name "fragment" :content "!")
+       (:link :rel "stylesheet" :href "/teck/css/teck.dep.css")
+       (:link :rel "stylesheet" :href "/teck/css/teck.css"))
+   (:body 
+       (:div :class "container"
+	     (:header
+	      (:div :class "navbar"
+		    (:h1 (:a :href "/teck/" "土曜Lisp"))))
+	     (:div :class "row"
+		   (:div :class "col-md-9" 
+			 (:article :data-bind "template: { name : 'blog-item' }"))
+		   (:div :class "col-md-3 sidebar"
+			 (:nav 
+			  (:div :class "menu" 
+				(:h4 "プロフィール")
+				(:p "mnmkh")
+				(:p "土曜Lisper"))
+			  (:div :class "menu"
+				(:h4 "最近のエントリ")
+				(:ul :data-bind "foreach : recentEntry "
+				     (:li
+				      (:a :data-bind "attr: {'href' : '/teck/view/id/' + id + '/'}, text : title "))))))
+		   (:footer nil)
+		   (:script :src  "/teck/js/teck.dep.min.js"  :type "text/javascript" nil)
+		   (:script :src  "/teck/js/teck.js" :type "text/javascript" nil)
+		   #@|component/blog-item.tmpl|
+		   ))))

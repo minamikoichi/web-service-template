@@ -1,0 +1,8 @@
+(:script :type "text/html" :id "blog-item"
+	 (:ul :class "section-list" :data-bind "foreach: { data: article , as: 'item' }"
+	      (:li :class "section"
+		   (:header 
+		    (:h4 :class :item-date :data-bind "text: $root.getShowDate( date )")
+		    (:h2 :class :item-title :data-bind "text: title"))
+		   (:div :class :item-text :data-bind "html: text" nil))))
+

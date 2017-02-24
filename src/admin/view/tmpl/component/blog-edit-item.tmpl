@@ -1,0 +1,22 @@
+(:script :type "text/html" :id "blog-edit-item"
+	 (:div :id "preview-viewer"
+	      (:li :class :section
+		   (:header 
+		    (:h4 :class :item-date :data-bind "text: editItemDate ")
+		    (:h2 :class :item-title :data-bind "text: editItemTitle"))
+		   (:div :class :item-text :data-bind "html: previewHtml" nil)))
+	 (:form :method "post" :action "" :id "postform"
+		(:fieldset 
+		 (:div :class "control-group" :style "margin-bottom:0px"
+		       (:div :class "control" 
+			     (:input :class "input-xlarge" :type "text" :id "title" :name "title" :data-bind "value : editItemTitle" nil)))
+		 (:div :class "control-group"
+		       (:div :class "control"
+			     (:textarea :name "text" :id "text" :rows "25" :cols "60" :data-bind "value : editItemText" nil)))
+		 (:div :class "control-group" 
+		       (:label :class "control-label" :for "tags" "tags")
+		       (:div :class "control"
+			     (:input :class "input-xlarge" :type "text" :id "tags" :name "tags" :data-bind "value : editItemTags" nil)))
+		 (:div :class "form-actions" 
+		       (:button :class "btn btn-default" :id "preview" :data-bind "click: function(data,event) { previewItemClick(editItemText,data,event) }" "Preview")
+		       (:button :class "btn btn-default" :id "post"  :data-bind "click: function(data,event) { commitEditItemClick(data,event)    }" "Post")))))

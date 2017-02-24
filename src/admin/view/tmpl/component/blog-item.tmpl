@@ -1,0 +1,14 @@
+(:script :type "text/html" :id "blog-item"
+	 (:ul :data-bind "foreach: { data: article , as: 'item' }"
+	      (:li :class :section
+		   (:header 
+		    (:h4 :class :item-date :data-bind "text: $root.getShowDate( date )")
+		    (:h2 :class :item-title :data-bind "text: title"))
+		   (:div :class :item-text :data-bind "html: text" nil))
+	      (:div :class :next-items
+		    (:h4 :class :next-item-label "他の記事")
+		    (:ul :class :next-item-list :data-bind "foreach : { data: recommend }"
+			 (:li :class :next-item 
+			      #,(transition-link :class "next-item-link" :data-bind "attr: {'href' : '/boardgame/view/id/' + id + '/'} , click: function(data, event) { $root.itemLinkClick(id,data,event)}"
+						 '(:img :class :next-item-photo :data-bind "attr: {'src' : $root.getRecommendThumbnail(thumbnail) }")
+						 '(:h6 :class :next-item-title :data-bind "text: title" nil)))))))

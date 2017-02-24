@@ -1,0 +1,23 @@
+(:script :type "text/html" :id "blog-item-summary"
+   (:ul :class "header-menu" :data-bind "foreach: adminBlogMenu"
+	 (:li :class "header-menu-item admin-menu-item"
+	      (:button :class "btn btn-default" :data-bind "text : name , click : function (data,event) { $parent.newItemLinkClick(data,event) }")))
+   (:ul :data-bind "foreach: article"
+	(:div :class "modal fade" :id "confirmModal" :tabindex "-1" :role "dialog" :aria-labelledby "confirmModalLabel" :aria-hidden"true" :data-bind "attr : { 'id' : 'confirmModal' + id }"
+	      (:div :class "modal-dialog modal-sm"
+		    (:div :class "modal-content"
+			  (:div :class "modal-header"
+				(:h4 :class "modal-title" "Delete item?"))
+			  (:div :class "modal-body"
+				(:button :type "button" :class "btn btn-default" :data-dismiss "modal" "Close")
+				(:button :type "button" :class "btn btn-primary" :data-dismiss "modal" :data-bind "click: function(data, event) { $parent.deleteItemButtonClick(id, data, event)}" "del")))))
+	(:li :class :section
+	     (:header 
+	      (:button :type "button" :class "btn btn-default btn-xs delete-button" :data-toggle "modal" :data-bind "attr : { 'data-target' : '#confirmModal' + id }" "del")
+	      (:button :type "button" :class "btn btn-default btn-xs edit-button"   :data-bind "click: function(data, event) { $parent.editItemButtonClick(id,data, event)}"   "edit")
+	      (:h4 :class :item-date :data-bind "text: $root.getShowDate( date )")
+	      (:h2 :class :item-title :data-bind "text: title"))
+	     (:div :class :item-summary :data-bind "attr: {'id' : id}"
+		   (:img :class :item-summary-photo :data-bind "attr: {'src' : thumbnail}" nil)
+		   (:p :class :item-summary-text :data-bind "text: firstline" nil)
+		   (:button :type "button" :class "btn btn-default" :data-bind "attr: {'href' : '/boardgame/view/id/' + id + '/'} , click: function(data, event) { $parent.itemLinkClick(id,data,event) }" "続きを読む → ")))))

@@ -1,0 +1,16 @@
+(:script :type "text/html" :id "blog-archive"
+    (:ul :class "header-menu archive-menu" :data-bind "foreach: tags"
+	 (:li :class "header-menu-item archive-menu-item"
+	      (:button :class "btn btn-default" :data-bind "text : name , click : function (data,event) { $parent.archiveTagFilterClick(value,data,event) }")))
+    (:div :class "archive"
+	 (:ul :data-bind "foreach: archive, afterRender: archiveInit"
+	      (:li :class "archive-section" :data-bind "attr: {'href' : '/boardgame/view/id/' + id + '/' } , click: function(data, event) { $parent.itemLinkClick(id,data,event) }"
+		   (:ul :class "archive-tags" :data-bind "foreach : $parent.tagsToList(tags) "
+			 (:li :class "tag" :data-bind "text : $data"))
+		   (:div :class "archive-item" :data-bind "attr: {'id' : id}"
+			 (:div :class "archive-item-board"
+			       (:h5 :class "archive-item-date" :data-bind "text: $root.getShowDate( date )")
+			       (:h5 :class "archive-item-title" :data-bind "text: title")
+			 (:div :class "archive-item-photo-frame"
+			       (:img :class "archive-item-photo" :data-bind "attr: {'src' : $parent.getArchiveThumbnail(thumbnail) }" nil))
+			 ))))))

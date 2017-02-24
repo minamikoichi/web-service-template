@@ -1,0 +1,24 @@
+(:div :class "menubar"
+      (:a :id "menubar-title-img" :href "/boardgame/" "日曜ボードゲーム")
+      (:ul :class "nav"
+	   (:li 
+	    (:a :href "/boardgame/" :data-bind "click: function(data, event) { $root.topLinkClick(data,event)}" 
+		(:i :class "fa fa-pencil fa-fw menubar-icon" nil) " HOME"))
+	   (:li 
+	    (:a :href "/boardgame/archive/"  :data-bind "click: function(data, event) { $root.archiveLinkClick(data,event)}" 
+		(:i :class "fa fa-folder fa-fw menubar-icon" nil) " ARCHIVE"))
+	   (:li
+	    (:a :href "/boardgame/gamelist/" :data-bind "click: function(data,event) { $root.gamelistLinkClick(data,event)}"
+		(:i :class "fa fa-list fa-fw menubar-icon" nil) " GAMELIST"))
+	   (:li 
+	    (:a :class "miss-link" :href "/boardgame/about/"    :data-bind "click: function(data,event) { return null;}" 
+		(:i :class "fa fa-info-circle fa-fw menubar-icon" nil) " ABOUT")))
+      (:div :class "splitbar" nil)
+      (:ul :class "nav"
+	   (:li :class "menubar-link-button"
+	    (:a :href "https://twitter.com/mnmbg" :id "twitter-icon"
+		(:i :class "fa fa-twitter-square fa-fw menubar-icon" nil)))
+	   (:li :class "menubar-link-button"
+	    (:a :href "/boardgame/feed" :id "rss-icon"
+		(:i :class "fa fa-rss-square fa-fw menubar-icon" nil))))
+      (:div :class "splitbar" nil))	   

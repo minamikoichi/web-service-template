@@ -1,0 +1,122 @@
+body {
+/*    background-color: #EAF6F2;*/
+}
+
+header {
+    background : black;
+    margin: 0 auto;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1em;
+    text-align: left;
+    border-bottom: 1px solid #BBB;
+    display: block;
+}
+
+header .navbar {
+    min-height    : 0px;
+    margin-bottom : 0px;
+}
+
+header h1{
+    color: white;
+    margin: 0;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+header h1 a{
+    color: white;
+    text-decoration: none;
+}
+
+header h1 p{
+    margin: 0 auto;
+}
+
+footer {
+    margin: 0 auto;
+    clear: both;
+    border-top: 1px solid #BBB;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+/* content */
+#content {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    padding: 0;
+}
+
+article {
+}
+
+/* nav section */
+nav {
+}
+
+nav div.menu {
+    margin: 1em;
+    float: none;
+}
+
+nav div.menu h4 {
+    font-size: 120%;
+    margin-bottom: 0.5em;
+}
+
+nav div.menu h3 {
+    font-size: 110%;
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-bottom: 0;
+}
+
+nav div.menu p {
+  margin-top: 0;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
+/* section */
+.section-list {
+    list-style  : none;
+    padding-left : 0px;
+}
+
+.section {
+    width : 98%;
+    margin: 0.5em;
+    display: block;
+}
+
+.section header{
+    background: white;
+    margin: 0 auto;
+    padding-left: 0.5em;
+    border-bottom: 0px;
+}
+
+.section header h4{
+    margin: 0;
+}
+
+.section header h4.ITEM-DATE {
+    display: block;
+    color: #659700;
+    margin-bottom: 0;
+    border-bottom: 1px solid #BBB;
+}
+
+.section header h2.ITEM-TITLE {
+    margin-top: 4px;
+}
+
+.section .ITEM-TEXT {
+    padding-left: 0.5em;
+    background: white;
+    display: block;
+    clear:left;
+}

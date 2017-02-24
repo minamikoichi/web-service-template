@@ -1,0 +1,8 @@
+(:script :type "text/html" :id "gamelist"
+    (:ul :class "header-menu admin-gamelist-menu"
+	 (:li :class "header-menu-item gamelist-menu-item"
+	      (:button :class "btn btn-default" :data-bind "text : 'Update' , click : function(data,event) { $root.gamelistDbUpdate(data,event) }" )))
+    (:ul :class "header-menu gamelist-menu" :data-bind "foreach: gamelistMenu"
+	 (:li :class "header-menu-item gamelist-menu-item"
+	      (:button :class "btn btn-default" :data-bind "text : name , click : function (data,event) { $parent.gamelistViewModeChange(value,data,event) }")))
+    (:div :class "gamelist" :data-bind "template: {name : gamelistViewMode}"))

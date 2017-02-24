@@ -1,0 +1,68 @@
+/* edit */
+.edit-button {
+    float: right;
+    margin-bottom: 0;
+}
+
+.delete-button {
+    float: right;
+    margin-bottom: 0;
+}
+
+/* admin postpage */
+#postform {
+    background :white;
+    margin: 12px;
+    padding: 10px;
+    border: 1px solid #622010;
+    border-top: 4px solid #622010;
+
+    overflow: hidden;
+    display: block;
+}
+
+label {
+    display: block;
+    float: left;
+    margin-left:1em;
+    margin-right:1em;
+}
+#title {
+    width: 98%;
+    margin: 0.4em;
+}
+
+#text {
+    width : 98%;
+    height : 100%;
+    resize: both;
+    margin: 0.4em;
+}
+
+#tags {
+    
+}
+
+.form-actions {
+    margin-top: 10px;
+}
+
+#preview {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+#post{
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.mark-description {
+    background :white;
+    margin: 12px;
+    padding: 10px;
+    border: 1px solid #622010;
+
+    overflow: hidden;
+    display: block;    
+}

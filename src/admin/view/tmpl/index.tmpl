@@ -1,0 +1,25 @@
+(:html :lang "ja"
+   (:head
+       (:title :data-bind "text: titleText" nil)
+       (:meta :charset "utf-8")
+       (:meta :name "viewport" :content "width=device-width, initial-scale=1.0")
+       (:link :rel "stylesheet" :href "/admin/css/boardgame.dep.css")
+       (:link :rel "stylesheet" :href "/admin/css/boardgame.css"))
+   (:body
+       (:img :src "/boardgame/img/bg_mini.jpg" :class "bgmaximage" nil)
+       (:div :class "container-fluid"
+ 	     (:div :class "row" 
+		   #@|component/menubar.tmpl|
+		   (:div :class "content"
+			 (:article :data-bind "template: { name : articleType }"))))
+       (:script :src "/admin/js/boardgame.dep.min.js" :type "text/javascript" nil)
+       (:script :src "/admin/js/boardgame.js" :type "text/javascript" nil)
+       #@|component/blog-item-summary.tmpl|
+       #@|component/blog-item.tmpl|
+       #@|component/blog-new-item.tmpl|
+       #@|component/blog-edit-item.tmpl|
+       #@|component/blog-archive.tmpl|
+       #@|component/gamelist.tmpl|
+       #@|component/gamelist-year-published.tmpl|
+       #@|component/gamelist-rating.tmpl|
+       ))

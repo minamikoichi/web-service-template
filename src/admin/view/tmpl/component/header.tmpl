@@ -1,0 +1,15 @@
+(:div :class "header"
+      (:a :id "header-title-img" :href "/boardgame/" "日曜ボードゲーム")
+      (:ul :class "header-menu"
+	    (:li 
+	     (:a :href "/boardgame/" :data-bind "click: function(data, event) { $root.topLinkClick(data,event)}" "BLOG"))
+	    (:li 
+	     (:a :href "/boardgame/gamelist/" "GAMELIST"))
+	    (:li 
+	     (:a :href "/boardgame/about/" "ABOUT")))
+      (:ul :class "header-menu pull-right"
+	   (:li
+	    (:a :href "https://twitter.com/mnmbg"  (:img :class "content-header-icon" :src "/boardgame/img/glyphicons_twitter.png")))
+	   (:li 
+	    (:a :href "/boardgame/feed" (:img :class "content-header-icon" :src "/boardgame/img/glyphicons_rss.png")))	   
+))
