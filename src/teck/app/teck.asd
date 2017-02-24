@@ -17,5 +17,4 @@
 	       :cl-json
 	       :cl-markup
 	       :teck-db
-	       :org-to-html
-	       :cl-bgg))
+	       :org-to-html))

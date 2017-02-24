@@ -6,9 +6,6 @@
 
 (load #p"~/.sbclrc")
 
-(ql:quickload "cl-fad")
-(ql:quickload "cl-async")
-
 (defun create-abs-path (path)
   (merge-pathnames path *DEFAULT-PATHNAME-DEFAULTS*))
 
@@ -21,6 +18,13 @@
 (when (< (length sb-ext:*posix-argv*) 3) 
   (usage)
   (exit))
+
+(add-libpath! #p"./lib/skip/")
+
+(let ((*standard-output* (make-string-output-stream)))
+  (ql:quickload "skip")
+  (ql:quickload "cl-fad")
+  (ql:quickload "cl-async"))
 
 ;;; variable
 (defvar *app-directory* (second sb-ext:*posix-argv*))
@@ -47,20 +51,12 @@
 ;;; load
 ;; buildappを使用する方法も検討する。
 ;; http://xach.com/lisp/buildapp/ 
-(ql:quickload "boardgame")
-(ql:quickload "admin")
 (ql:quickload "teck")
 
 ;;; swank
 (ql:quickload :swank)
 
 ;;; app run code.
-(defparameter *server* 
-  (cl-ws:launch-instance boardgame::*frontend-config*))
-
-(defparameter *admin-server*
-  (cl-ws:launch-instance admin::*frontend-config*))
-
 (defparameter *teck-server*
   (cl-ws:launch-instance teck::*frontend-config*))
 
@@ -73,6 +69,4 @@
 		       (lambda (sig)
 			 (declare (ignore sig))
 			 (as:free-signal-handler 2)
-			 (cl-ws-wookie:stop-instance *server*)
-			 (cl-ws-wookie:stop-instance *admin-server*)
 			 (cl-ws-wookie:stop-instance *teck-server*)))))

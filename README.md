@@ -1,6 +1,9 @@
 # web-service-tmpl
 Common Lisp WebAPP Template.
 
+## Sample blog service.
+   http://doyoulisp.org/teck/
+   
 ## Setup
 ```
 sudo apt-get install nodejs-legacy

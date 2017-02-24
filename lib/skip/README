@@ -1,0 +1,6 @@
+;;; usage
+;;; (defun add-libpath! (path)
+;;;  (pushnew path asdf:*central-registry*))
+;;; 
+;;; (add-libpath! #p"${PATH}/skip/")
+;;; (ql:quickload "skip")

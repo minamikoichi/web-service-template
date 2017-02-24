@@ -12,7 +12,7 @@ run:
 
 deploy:
 	# download libs
-	git clone git@bitbucket.org:mnmkh/cl-ws.git lib/cl-ws
+	git clone https://github.com/minamikoichi/cl-ws.git lib/cl-ws
 
 clean:
 	rm -rf lib/cl-ws

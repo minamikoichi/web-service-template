@@ -18,7 +18,6 @@
 		 :clsql
 		 :clsql-sqlite3
 		 :hu.dwim.defclass-star
-		 :cl-bgg
 		 :cl-annot))
 
 (defsystem :teck-db-test

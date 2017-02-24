@@ -9,10 +9,6 @@
 (defun add-libpath! (path)
   (pushnew path asdf:*central-registry*))
 
-(add-libpath! #p"./lib/markup-template-file/")
-(let ((*standard-output* (make-string-output-stream)))
-  (ql:quickload "markup-template-file"))
-
 (defun usage ()
   (format t "[Usage] gen-html TEMPLATE-DIREDTORY TARGET-DIRECTORY (EVAL_PACKAGE) ~%"))
 
@@ -22,6 +18,14 @@
 	  (> (length sb-ext:*posix-argv*) 4))
   (usage)
   (exit))
+
+;; load libs.
+(add-libpath! #p"./lib/skip/")
+(let ((*standard-output* (make-string-output-stream)))
+  (ql:quickload "skip"))
+(add-libpath! #p"./lib/markup-template-file/")
+(let ((*standard-output* (make-string-output-stream)))
+  (ql:quickload "markup-template-file"))
 
 ;; variable
 (defvar *template-directory* (second sb-ext:*posix-argv*))
